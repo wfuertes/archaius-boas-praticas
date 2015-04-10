@@ -28,6 +28,7 @@ public class Demonstration {
             System.out.println(".......... Valor do salário foi alterado ..........");
         });
 
+        System.out.println("\n=========================================================");
         System.out.println("Rodando o app: " + appName.get());
         
         while (true) {

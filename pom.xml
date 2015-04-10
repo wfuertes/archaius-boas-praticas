@@ -38,6 +38,39 @@
 					<source>1.8</source>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.4.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.matera.archaius.Demonstration</mainClass>
+					<systemProperties>
+						<systemProperty>
+							<key>archaius.configurationSource.defaultFileName</key>
+							<value>config.properties</value>
+						</systemProperty>
+						<systemProperty>
+							<key>archaius.configurationSource.additionalUrls</key>
+							<value>file:///${basedir}/src/main/resources/boas-praticas.properties</value>
+						</systemProperty>
+						<systemProperty>
+							<key>archaius.fixedDelayPollingScheduler.initialDelayMills</key>
+							<value>30000</value>
+						</systemProperty>
+						<systemProperty>
+							<key>archaius.fixedDelayPollingScheduler.delayMills</key>
+							<value>15000</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
